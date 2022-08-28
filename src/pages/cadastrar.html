@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/styleBase.css">
+     
+
     <title>Entrega Lista de Clientes</title>
 </head>
+
 <body>
     <header>
         <ul>
@@ -19,38 +23,41 @@
     </header>
 
 
-    <form>
+    <form id="cadastroCliente">
         <h2>Cadastre um cliente</h2>
 
         <h3>Dados pessoais</h3>
 
-        <input type="text" name="nome" placeholder="digite seu nome"/>
+        <input type="text" id="1" name="nome" placeholder="digite seu nome" />
 
-        <input type="text" name="email" placeholder="digite sua email"/>
+        <input type="text" id="2" name="email" placeholder="digite sua email" />
 
-        <input type="number" name="idade" placeholder="digite sua idade"/>
+        <input type="number" id="3" name="idade" placeholder="digite sua idade" />
 
-        <input type="text" name="cpf" placeholder="digite seu cpf"/>
+        <input type="text" id="4" name="cpf" placeholder="digite seu cpf" />
 
-        <input type="text" name="sexo" placeholder="digite seu sexo"/>
+        <input type="text" id="5" name="sexo" placeholder="digite seu sexo" />
 
 
         <h3>Endereço</h3>
 
-        <input type="number" name="cep" placeholder="digite seu cep"/>
-        
-        <input type="text" name="rua" placeholder="digite sua rua"/>
+        <input type="number" id="6" name="cep" placeholder="digite seu cep" />
 
-        <input type="number" name="numero" placeholder="digite o numero"/>
+        <input type="text" id="7" name="rua" placeholder="digite sua rua" />
 
-        <input type="text" name="bairro" placeholder="digite seu bairro"/>
+        <input type="number" id="8" name="numero" placeholder="digite o numero" />
 
-        <input type="text" name="cidade" placeholder="digite sua cidade"/>
+        <input type="text" id="9" name="bairro" placeholder="digite seu bairro" />
 
-        <input type="text" name="estado" placeholder="digite seu estado"/>
+        <input type="text" id="10" name="cidade" placeholder="digite sua cidade" />
+
+        <input type="text" id="11" name="estado" placeholder="digite seu estado" />
 
 
-        <button>Cadastrar</button>
+        <button type="submit" class="cadastrar">Cadastrar</button>
     </form>
+
+    <script type="module" src= "../js/cadastrar.js" >  </script> 
 </body>
+
 </html>
