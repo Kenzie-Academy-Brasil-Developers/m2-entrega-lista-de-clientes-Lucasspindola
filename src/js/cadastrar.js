@@ -1,7 +1,6 @@
 
 import Api from "./api.js"
 
-
 let nome = document.getElementById("1");
 let email = document.getElementById("2");
 let idade = document.getElementById("3");
@@ -14,12 +13,8 @@ let bairro = document.getElementById('9');
 let cidade = document.getElementById('10');
 let estado = document.getElementById('11');
 
-
-
-
 // Pegando botão de Cadastrar. Por ser dentro de um form, usasse o type submite e não o click.
 let cadastroCliente = document.querySelector('#cadastroCliente')
-
 
 class Cadastrar {
     static async cadastrarClienteNovo(data) {
@@ -42,17 +37,16 @@ class Cadastrar {
                     rua: rua.value,
                     cep: cep.value
                 }
-                
+
             }
-        //    Chamando a API e passando o body(novoCadastro)
+            //    Chamando a API e passando o body(novoCadastro)
             return await Api.cadastrarCliente(novoCadastro);
 
-           
         })
     }
 }
 
-let novoCliente=  Cadastrar.cadastrarClienteNovo()
+let novoCliente = Cadastrar.cadastrarClienteNovo()
 export default Cadastrar
 
 

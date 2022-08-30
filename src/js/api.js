@@ -9,13 +9,15 @@ class Api {
 
     }
 
+    static async pesquisarCliete() {
+        let clientesAtuais = await fetch(`https://atividade-api-clientes.herokuapp.com/clientes/ ${id}`)
+            .then(res => res.json())
+            .then(res => res)
+            .catch(err => console.log(err))
+        return clientesAtuais
 
-    //     const options = {method: 'POST'};
+    }
 
-    // fetch('https://atividade-api-clientes.herokuapp.com/clientes', options)
-    //   .then(response => response.json())
-    //   .then(response => console.log(response))
-    //   .catch(err => console.error(err)); 
 
     static async cadastrarCliente(data) {
 
@@ -34,29 +36,40 @@ class Api {
             .catch((err) => console.log(err))
 
         return metPost
-    }
+    };
+
 
     static async editarCliente(id, data) {
         const options = {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer https://atividade-api-clientes.herokuapp.com/clientes/${id}`
+                'Content-Type': 'application/json'
+
             },
-            body: '{"nome":"Renato"}'// arrumar esse body
+            body: JSON.stringify(data)
+
         };
 
-        fetch('https://atividade-api-clientes.herokuapp.com/clientes/1', options)
+        fetch(`https://atividade-api-clientes.herokuapp.com/clientes/${id}`, options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => window.location.assign('/index.html'))
+
             .catch(err => console.error(err));
 
-    }
+    };
+
 
     static async deletarCliente(id) {
 
-    }
+        const options = { method: 'DELETE' };
 
-}
+        await fetch(`https://atividade-api-clientes.herokuapp.com/clientes/${id}`, options)
+            .then(response => response.json())
+            .then(response => window.location.assign('../pages/deletar.html'))
+            .catch((err) => window.location.assign('../pages/deletar.html'));
 
-export default Api 
+    };
+
+};
+
+export default Api;
